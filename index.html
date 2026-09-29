@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dualtype — Privacy Policy</title>
+<meta name="description" content="What the Dualtype browser extension can see, what it does with it, and where it goes." />
+<style>
+  :root {
+    --bg:#f7f8fa; --card:#fff; --fg:#111b21; --muted:#5d6b74; --border:#e2e5e8;
+    --accent:#008069; --accent-bg:#e7f5f1;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#0f171c; --card:#18232a; --fg:#e9edef; --muted:#93a3ad; --border:#2a363e;
+      --accent:#00a884; --accent-bg:#0b2e28;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 720px; margin:0 auto; padding: 56px 20px 96px; }
+  header { border-bottom:1px solid var(--border); padding-bottom:24px; margin-bottom:36px; }
+  h1 { font-size:30px; letter-spacing:-0.02em; margin:0 0 8px; }
+  .updated { color:var(--muted); font-size:14px; margin:0; }
+  .lede { font-size:17px; color:var(--fg); margin:20px 0 0; }
+  h2 { font-size:20px; letter-spacing:-0.01em; margin:40px 0 12px; }
+  h2:first-of-type { margin-top:32px; }
+  p, li { color:var(--fg); }
+  .muted { color:var(--muted); }
+  a { color:var(--accent); }
+  ul { padding-left:22px; }
+  li { margin-bottom:8px; }
+  .callout {
+    background:var(--accent-bg); border-left:3px solid var(--accent);
+    border-radius:0 8px 8px 0; padding:16px 18px; margin:24px 0;
+  }
+  .callout p { margin:0; }
+  .table-scroll { overflow-x:auto; margin:20px 0; }
+  table { width:100%; border-collapse:collapse; font-size:15px; min-width:460px; }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); vertical-align:top; }
+  th { font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); font-weight:600; }
+  code {
+    background:var(--card); border:1px solid var(--border); border-radius:4px;
+    padding:1px 5px; font-size:14px;
+  }
+  footer {
+    margin-top:56px; padding-top:24px; border-top:1px solid var(--border);
+    color:var(--muted); font-size:13.5px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Dualtype — Privacy Policy</h1>
+  <p class="updated">Last updated: 13 September 2026</p>
+  <p class="lede">
+    Dualtype is a browser extension that shows a translation of the message you are typing on
+    WhatsApp Web, and keeps the phrases you send as a personal review deck. This policy describes
+    exactly what the extension can see, what it does with it, and where it goes. It is short
+    because the extension does very little.
+  </p>
+</header>
+
+<div class="callout">
+  <p><strong>The short version.</strong> There is no Dualtype server. We do not collect, receive,
+  store, transmit or sell any of your data. We cannot see your messages, your phrase deck, or your
+  settings, because none of it ever reaches us.</p>
+</div>
+
+<h2>What the extension can access</h2>
+<p>
+  <strong>Text you type into the WhatsApp Web message box</strong>, and only while the translation
+  strip is turned on. The extension reads the message box on <code>web.whatsapp.com</code> so it can
+  translate what you are writing.
+</p>
+<p>
+  The extension does <strong>not</strong> read your received messages, your chat history, your
+  contacts, your phone number, your profile, or any other part of WhatsApp. It does not send
+  messages, modify messages, or act on your account in any way.
+</p>
+<p>The extension runs only on <code>web.whatsapp.com</code>. It has no access to any other website you visit.</p>
+
+<h2>Where that text goes</h2>
+<p>
+  When you pause typing, the text in the message box is sent to <strong>the translation provider you
+  have selected in settings</strong>, and to nowhere else. You choose the provider:
+</p>
+<div class="table-scroll">
+<table>
+  <thead><tr><th>Provider</th><th>Where your text goes</th></tr></thead>
+  <tbody>
+    <tr><td>MyMemory <span class="muted">(default)</span></td><td><code>api.mymemory.translated.net</code> — <a href="https://mymemory.translated.net/doc/en/privacy.php">privacy policy</a></td></tr>
+    <tr><td>LibreTranslate</td><td>The server you configure. If you point it at your own machine, the text never leaves your computer.</td></tr>
+    <tr><td>DeepL</td><td><code>api.deepl.com</code> — <a href="https://www.deepl.com/privacy">privacy policy</a></td></tr>
+    <tr><td>Claude (Anthropic)</td><td><code>api.anthropic.com</code> — <a href="https://www.anthropic.com/legal/privacy">privacy policy</a></td></tr>
+    <tr><td>Google Cloud Translation</td><td><code>translation.googleapis.com</code> — <a href="https://policies.google.com/privacy">privacy policy</a></td></tr>
+  </tbody>
+</table>
+</div>
+<p>
+  Your text is handled by that provider under <strong>their</strong> privacy policy, not ours. If you
+  would rather no text left your machine at all, run a local LibreTranslate instance and select it in
+  settings.
+</p>
+<p class="muted">
+  Text is sent only when you have typed at least two characters and then paused. Messages longer than
+  1,200 characters are not sent at all. Repeated phrases are served from a local in-memory cache and are
+  not re-sent.
+</p>
+<p>
+  <strong>If your chosen provider fails</strong>, the extension shows you an error. It does
+  <strong>not</strong> reroute your message to a different service. There is an off-by-default setting
+  that permits falling back to MyMemory when a provider fails; if you turn it on, the strip tells you
+  each time it happens. A LibreTranslate server of your own never falls back, whatever that setting says.
+</p>
+<p>
+  <strong>The optional contact email.</strong> MyMemory offers a higher free daily limit to requests that
+  carry an email address. If — and only if — you enter one in settings, it is included in requests to
+  MyMemory. Leave that box empty and no email is ever sent.
+</p>
+
+<h2>What is stored, and where</h2>
+<p>
+  Everything the extension stores lives in your browser's local extension storage
+  (<code>chrome.storage.local</code>) on this computer:
+</p>
+<ul>
+  <li><strong>Your settings</strong> — language pair, chosen provider, timing preferences.</li>
+  <li><strong>Your API keys</strong>, if you entered any. These are stored locally and are transmitted only to the provider they belong to, in order to authenticate your own requests.</li>
+  <li><strong>Your phrase deck</strong> — the phrases you sent, their translations, and their review schedule.</li>
+</ul>
+<p>
+  This data is not synced to any account, not backed up anywhere, and not readable by us or by anyone
+  else. It stays in this browser profile.
+</p>
+
+<h2>What is not done</h2>
+<ul>
+  <li>No analytics, telemetry, crash reporting or usage tracking.</li>
+  <li>No advertising, and no data sold or shared with data brokers.</li>
+  <li>No user accounts, no sign-in, no identifiers of any kind.</li>
+  <li>No remote code execution. The extension ships all of its code in the package.</li>
+  <li>Nothing is written to logs.</li>
+</ul>
+
+<h2>Permissions, and why each one exists</h2>
+<ul>
+  <li><code>storage</code> — to save your settings and your phrase deck on this computer.</li>
+  <li>Host access to <code>web.whatsapp.com</code> — to read the message box and draw the translation strip above it.</li>
+  <li>Host access to the translation API hosts listed above — so the extension's background worker can request a translation from the provider you selected. WhatsApp's content security policy blocks these requests from the page itself, so they are made from the extension's own background context.</li>
+  <li>Host access to <code>localhost</code> and <code>127.0.0.1</code> — so you can point the extension at a LibreTranslate instance running on your own machine.</li>
+</ul>
+<p>
+  No other permissions are requested. The extension does not request access to browsing history, tabs,
+  cookies, downloads, your clipboard, or any site other than those listed.
+</p>
+
+<h2>Deleting your data</h2>
+<ul>
+  <li><strong>Phrase deck:</strong> open the deck page and click <em>Clear deck</em>. You can export it to CSV first.</li>
+  <li><strong>Everything else:</strong> removing the extension from <code>chrome://extensions</code> deletes all of its stored data, including your API keys.</li>
+</ul>
+<p>Because none of it ever left your computer, there is nothing for us to delete on our side.</p>
+
+<h2>Children</h2>
+<p>Dualtype is not directed at children under 13 and collects no information from anyone.</p>
+
+<h2>Changes</h2>
+<p>
+  If this policy changes, the date at the top changes with it, and material changes will be noted in
+  the extension's store listing.
+</p>
+
+<h2>Contact</h2>
+<p class="muted">
+  <!-- Replace before publishing. A store listing requires a working contact address; consider a
+       dedicated address rather than a personal one, since this page is public. -->
+  [Add a contact address here before publishing.]
+</p>
+
+<footer>
+  Dualtype is an independent tool. It is not affiliated with, associated with, endorsed by, or
+  sponsored by WhatsApp, Meta Platforms, Inc., or any translation provider. WhatsApp is a trademark
+  of Meta Platforms, Inc.
+</footer>
+
+</div>
+</body>
+</html>
